@@ -17,14 +17,22 @@ namespace Clicker
         }
         int buttonLevel;
         int AutoAmmount1;
+        int AutoAmmount2;
+        int AutoAmmount3;
         int AutoInterval1;
+        int AutoInterval2;
+        int AutoInterval3;
         public Form1()
         {
             InitializeComponent();
             Cash = 0;
             buttonLevel = 1;
             AutoAmmount1 = 10;
+            AutoAmmount2 = 100;
+            AutoAmmount3 = 1000;
             AutoInterval1 = 0;
+            AutoInterval2 = 0;
+            AutoInterval3 = 0;
             AutoIntTxtBox1.Text = AutoInterval1.ToString();
             MoneyPTTxtBox1.Text = AutoAmmount1.ToString();
         }
@@ -33,7 +41,7 @@ namespace Clicker
         {
             int upgradeCost = AutoAmmount1 * 10;
             AutoMoneyUpCost1.Text = upgradeCost.ToString();
-            if (cash > upgradeCost)
+            if (cash >= upgradeCost)
             {
                 AutoAmmount1 += 10;
                 MoneyPTTxtBox1.Text = AutoAmmount1.ToString();
@@ -48,7 +56,7 @@ namespace Clicker
         private void Interval_Click(object sender, EventArgs e)
         {
             int upgradeCost = AutoInterval1 * 100;
-            IntUpCostTxtBox.Text = upgradeCost.ToString();
+            IntUpCostTxtBox1.Text = upgradeCost.ToString();
             if (Cash >= upgradeCost)
             {
                 AutoInterval1++;
@@ -92,6 +100,70 @@ namespace Clicker
         private void BttnUpgCostTxtBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Auto2_Click(object sender, EventArgs e)
+        {
+            int upgradeCost = AutoAmmount2 * 100;
+            AutoMoneyUpCost2.Text = upgradeCost.ToString();
+            if (cash >= upgradeCost)
+            {
+                AutoAmmount2 += 100;
+                MoneyPTTxtBox2.Text = AutoAmmount2.ToString();
+                Cash -= upgradeCost;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Cash += AutoInterval2;
+        }
+
+        private void Interval2_Click(object sender, EventArgs e)
+        {
+            int upgradeCost = AutoInterval2 * 1000;
+            IntUpCostTxtBox2.Text = upgradeCost.ToString();
+            if (Cash >= upgradeCost)
+            {
+                AutoInterval2++;
+                AutoIntTxtBox2.Text = AutoInterval2.ToString();
+                AutoIntTimer2.Interval = (int)Math.Ceiling((double)((60 / AutoInterval2) * 100 + float.Epsilon));
+                if (!AutoIntTimer2.Enabled)
+                    AutoIntTimer2.Enabled = true;
+                Cash -= upgradeCost;
+            }
+        }
+
+        private void Auto3_Click(object sender, EventArgs e)
+        {
+            int upgradeCost = AutoAmmount3 * 10000;
+            AutoMoneyUpCost3.Text = upgradeCost.ToString();
+            if (cash >= upgradeCost)
+            {
+                AutoAmmount3 += 10;
+                MoneyPTTxtBox3.Text = AutoAmmount3.ToString();
+                Cash -= upgradeCost;
+            }
+        }
+
+        private void Interval3_Click(object sender, EventArgs e)
+        {
+            int upgradeCost = AutoInterval3 * 100000;
+            IntUpCostTxtBox3.Text = upgradeCost.ToString();
+            if (Cash >= upgradeCost)
+            {
+                AutoInterval3++;
+                AutoIntTxtBox3.Text = AutoInterval3.ToString();
+                AutoIntTimer3.Interval = (int)Math.Ceiling((double)((60 / AutoInterval3) * 100 + float.Epsilon));
+                if (!AutoIntTimer3.Enabled)
+                    AutoIntTimer3.Enabled = true;
+                Cash -= upgradeCost;
+            }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            Cash += AutoInterval3;
         }
     }
 }
