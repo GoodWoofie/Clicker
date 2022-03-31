@@ -89,7 +89,7 @@ namespace Clicker
 
         private void AutoIntTimer_Tick(object sender, EventArgs e)
         {
-            Cash += AutoInterval1;
+            Cash += AutoAmmount1;
         }
 
         private void MoneyPT1_TextChanged(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace Clicker
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Cash += AutoInterval2;
+            Cash += AutoAmmount2;
         }
 
         private void Interval2_Click(object sender, EventArgs e)
@@ -140,7 +140,7 @@ namespace Clicker
             AutoMoneyUpCost3.Text = upgradeCost.ToString();
             if (cash >= upgradeCost)
             {
-                AutoAmmount3 += 10;
+                AutoAmmount3 += 1000;
                 MoneyPTTxtBox3.Text = AutoAmmount3.ToString();
                 Cash -= upgradeCost;
             }
@@ -163,7 +163,17 @@ namespace Clicker
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            Cash += AutoInterval3;
+            Cash += AutoAmmount3;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
         }
     }
 }
