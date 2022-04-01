@@ -31,11 +31,15 @@ namespace Clicker
             AutoAmmount1 = 10;
             AutoAmmount2 = 100;
             AutoAmmount3 = 1000;
-            AutoInterval1 = 0;
-            AutoInterval2 = 0;
-            AutoInterval3 = 0;
+            AutoInterval1 = 1;
+            AutoInterval2 = 1;
+            AutoInterval3 = 1;
             AutoIntTxtBox1.Text = AutoInterval1.ToString();
+            AutoIntTxtBox2.Text = AutoInterval2.ToString();
+            AutoIntTxtBox3.Text = AutoInterval3.ToString();
             MoneyPTTxtBox1.Text = AutoAmmount1.ToString();
+            MoneyPTTxtBox2.Text = AutoAmmount2.ToString();
+            MoneyPTTxtBox3.Text = AutoAmmount3.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -97,12 +101,6 @@ namespace Clicker
         {
 
         }
-
-        private void BttnUpgCostTxtBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Auto2_Click(object sender, EventArgs e)
         {
             int upgradeCost = AutoAmmount2 * 100;
