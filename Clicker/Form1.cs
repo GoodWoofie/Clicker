@@ -48,6 +48,7 @@ namespace Clicker
             AutoMoneyUpCost1.Text = upgradeCost.ToString();
             if (cash >= upgradeCost)
             {
+                Auto1.Enabled = true;
                 AutoAmmount1 += 10;
                 MoneyPTTxtBox1.Text = AutoAmmount1.ToString();
                 Cash -= upgradeCost;
@@ -135,7 +136,7 @@ namespace Clicker
 
         private void Auto3_Click(object sender, EventArgs e)
         {
-            int upgradeCost = AutoAmmount3 * 10000;
+            int upgradeCost = AutoAmmount3 * 1000;
             AutoMoneyUpCost3.Text = upgradeCost.ToString();
             if (cash >= upgradeCost)
             {
@@ -147,7 +148,7 @@ namespace Clicker
 
         private void Interval3_Click(object sender, EventArgs e)
         {
-            int upgradeCost = AutoInterval3 * 100000;
+            int upgradeCost = AutoInterval3 * 10000;
             IntUpCostTxtBox3.Text = upgradeCost.ToString();
             if (Cash >= upgradeCost)
             {
