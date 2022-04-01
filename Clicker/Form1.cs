@@ -1,3 +1,4 @@
+using System.Media;
 namespace Clicker
 {
     public partial class Form1 : Form
@@ -168,12 +169,8 @@ namespace Clicker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-        }
-
-        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
+            SoundPlayer Music = new SoundPlayer(Properties.Resources.song);
+            Music.PlayLooping();
         }
     }
 }

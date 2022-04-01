@@ -11,6 +11,7 @@
 namespace Clicker.Properties {
     using System;
     
+    
     /// <summary>
     ///   Klasa zasobu wymagająca zdefiniowania typu do wyszukiwania zlokalizowanych ciągów itd.
     /// </summary>
